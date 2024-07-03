@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('facturas', function (Blueprint $table) {
+        Schema::create('detallecompras', function (Blueprint $table) {
             $table->id();
-            $table->string('cliente')->nullable();
-            $table->date('fecha')->nullable();
-            $table->string('DUI')->nullable();
-            $table->string('codigo')->nullable();
-            $table->string('direccion')->nullable();
-            $table->double('IVA')->nullable();
+            $table->integer('idcompra');
+            $table->integer('idproducto')->nullable();
+            $table->string('descripcion')->nullable();
+            $table->integer('cantidad')->nullable();
+            $table->double('preciouni')->nullable();
             $table->double('subtotal')->nullable();
-            $table->double('total')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('facturas');
+        Schema::dropIfExists('detallecompras');
     }
 };

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('Correo')->nullable();
             $table->string('Direccion')->nullable();
             $table->string('Articulos')->nullable();
+            $table->string('Sitio_web')->nullable();
+            $table->string('Tipo_credito')->nullable();
             $table->timestamps();
         });
     }

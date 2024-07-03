@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Proveedor')->nullable();
             $table->double('Precio')->nullable();
             $table->integer('Cantidad')->nullable();
+            $table->integer('Unidad_medida')->nullable();
             $table->timestamps();
         });
     }

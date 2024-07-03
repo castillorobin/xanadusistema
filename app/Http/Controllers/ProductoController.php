@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+use App\Models\Proveedor;
 
 class ProductoController extends Controller
 {
@@ -11,7 +13,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return view('producto.index', compact('productos'));
     }
 
     /**
@@ -19,7 +22,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $proveedores = Proveedor::all();
+        return view('producto.crear', compact('proveedores'));
     }
 
     /**
@@ -27,7 +31,20 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto();
+
+        $producto->Nombre = $request->get('nombre');
+        $producto->Descripcion = $request->get('descripcion');
+        $producto->Categoria = $request->get('categoria');
+        $producto->Proveedor = $request->get('proveedor');
+        $producto->Precio = $request->get('precio');
+        $producto->Cantidad = $request->get('cantidad');
+        $producto->Unidad_medida = $request->get('unidad');
+        
+        $producto->save();
+
+        $productos = Producto::all();
+        return view('producto.index', compact('productos'));
     }
 
     /**
@@ -59,6 +76,7 @@ class ProductoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Producto::find($id)->delete();
+        return redirect()->route('indexpr');
     }
 }

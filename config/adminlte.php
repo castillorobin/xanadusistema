@@ -315,28 +315,28 @@ return [
         ['header' => 'OPCIONES'],
         [
             'text' => 'Clientes',
-            'url' => 'admin/settings',
+            'url' => 'clientes',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Productos',
-            'url' => 'admin/settings',
+            'url' => 'productos',
             'icon' => 'fas fa-cart-plus',
         ],
 
         [
             'text' => 'Facturacion',
-            'url' => 'admin/settings',
+            'url' => 'facturacion',
             'icon' => 'fas fa-file-invoice-dollar',
         ],
         [
             'text' => 'Compras',
-            'url' => 'admin/settings',
+            'url' => 'compras',
             'icon' => 'fas fa-shopping-basket',
         ],
         [
             'text' => 'Proveedores',
-            'url' => 'admin/settings',
+            'url' => 'proveedores',
             'icon' => 'fas fa-truck',
         ],
 

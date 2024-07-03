@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
+            $table->date('Fecha')->nullable();
+            $table->string('CCF')->nullable();
+            $table->string('Proveedor')->nullable();
+            $table->double('Total')->nullable();
+            $table->string('Nota')->nullable();
+            //$table->string('SEM')->nullable();
             $table->timestamps();
         });
     }
