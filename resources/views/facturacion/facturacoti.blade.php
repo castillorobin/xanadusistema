@@ -5,259 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cotizacion</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
 </head>
 <body>
+
     
 
-<section class="content container-fluid">
-    <div class="row">
-        <div class="col-md-12">
+   
+        <div class="row">
 
-            <div class="card card-default">
+            <div class="col-md-12 text-center">
+                <h3>Factura</h3>
                 
-                <div class="card-body bg-white">
+            </div>
+            
 
+
+
+                                                  
                     
-<div class="container">
-<img src="../public/logo.jpg" alt="" width="200px" style="margin-left:180px;">
-
-
-        <div class="row my-2">
-        <table border="1"> 
-    <tr>
-        <td style="width:200px;">
-        <div class="col-6">
-                        
-                        <div class="input-group">
-                        <span class="input-group-text">Atencion: </span>
-                        <span class="input-group-text">{{ $cotiactual[0]->nombre}}</span>
-                        
- 
-                        </div>
-                    </div>
-        </td>
-        <td style="width:200px;" rowspan="2">
-        <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text" >Cotización: </span>
-                        <span class="input-group-text">{{ $cotiactual[0]->codigo}}</span>
-
-                    </div>
-                    </div>
-        </td>
-
-        <td rowspan="2">
-            <div class="col-4">
-                <div class="input-group">
-                    <span class="input-group-text">Fecha: </span>
-                    <span class="input-group-text">{{ $cotiactual[0]->fecha}}</span>
-                    
-                </div>
-                </div>
-        </td>
-        </tr>
-
-                    
-
-        <tr>
-            <td style="width:200px;">
-                   
-        <div class="row my-2">
-
-            <div class=" col-6">
-            <div class="input-group">
-                <span class="input-group-text">Empresa: </span>
-                <span class="input-group-text">{{ $cotiactual[0]->empresa}}</span>
-               
-            </div>
-            </div>
-
-</div>
-</td>
-
-
-</tr>
-<tr>
-    <td style="width:200px;">
-        <div class="col-6">
-            <div class="input-group">
-                <span class="input-group-text">Ubicación: </span>
-                <span class="input-group-text">{{ $cotiactual[0]->direccion}}</span>
-               
-            </div>
-            </div>
-    </td>
-    <td colspan="2">
-        <div class="col-6">
-            <div class="input-group">
-            <span class="input-group-text">Contacto 1: </span>
-            <span class="input-group-text">{{ $cotiactual[0]->contacto1}}</span>
-            
-        </div>    
-        </div>     
-    </td>
+             
+        <div class="row">
     
-</tr>
-
-<tr>
-    <td style="width:200px;">
-        <div class="col-6">
-            <div class="input-group">
-                <span class="input-group-text">Orden: </span>
-                <span class="input-group-text">{{ $cotiactual[0]->orden}}</span>
-               
-            </div>
-            </div>
-    </td>
-    <td colspan="2">
-        <div class="col-6">
-            <div class="input-group">
-            <span class="input-group-text">Contacto 2: </span>
-            <span class="input-group-text">{{ $cotiactual[0]->contacto2}}</span>
-            
-        </div>    
-        </div>     
-    </td>
+            <div class="col-12 text-center">
+             <h5>Santos Alberto Guerrero Beltran</h5>
+                <h4>MOTEL SANTORINI</h4>
+                <H5>17 Av. Sur y Calle Santa Cruz #7</H5>
+                <H5>Callejon Ferrocaril, Santa Ana</H5>
     
-</tr>
-
-
-<tr>
-    <td style="width:200px;">
-        <div class="col-6">
-            <div class="input-group">
-                <span class="input-group-text">Garantia del trabajo: </span>
-                <span class="input-group-text">{{ $cotiactual[0]->garantia}}</span>
-               
-            </div>
-            </div>
-    </td>
-    <td colspan="2">
-        <div class="col-6">
-            <div class="input-group">
-            <span class="input-group-text">Registro: </span>
-            <span class="input-group-text">{{ $cotiactual[0]->NCR}}</span>
-            
-        </div>    
-        </div>     
-    </td>
     
-</tr>
-
-<tr>
-    <td style="width:200px; border: 0px solid black; " >
-        
-    </td>
-    <td colspan="2">
-        <div class="col-6">
-            <div class="input-group">
-            <span class="input-group-text">Email: </span>
-            <span class="input-group-text">{{ $cotiactual[0]->correo}}</span>
-            
-        </div>    
-        </div>     
-    </td>
-    
-</tr>
-<br>
-<tr>
-    <td style="width:200px;" >
+            </div>
      
-        <span class="input-group-text">Tenemos el gusto de cotizarle:</span> 
-    </td>
-    <td colspan="2">
-        <div class="col-6">
-            <div class="input-group">
-            <span class="input-group-text">Proveedor: </span>
-            <span class="input-group-text">{{ $cotiactual[0]->correo}}</span>
-            
-        </div>    
-        </div>     
-    </td>
+   
     
-</tr>
-</table>
-
-<br>
-        </div>
-
-
-         </div>  
-        </div>
-
-      
-           
-          
-          
-            
-</div>
-
-<table id="prove" class="table table-bordered shadow-lg mt-4 cell-border" border="1">
-    <thead >
-        <tr style="background-color:#033dc2; color:white;" >
-            
-            <th scope="col" style="width:400px; text-align: center;">Detalle</th>
-            <th scope="col" style="width:60px; text-align: center;">Cantidad</th>
-            <th scope="col" style="width:60px; text-align: center;">Costo</th>
-           
-        </tr>
-    </thead>
-    <tbody>
-        {{ $subtotal = 0; }}
-        @for ($i=0; $i< count($detalles); $i++)
-        
-        <tr >
-        <td >{{ $detalles[$i]->descripcion }}</td>
-       
-        <td style="text-align: center;">{{ $detalles[$i]->cantidad }}</td>
-        <td style="text-align: center;">${{ $detalles[$i]->preciouni }}</td>
-        {{ $subtotal = $subtotal + $detalles[$i]->total; }}
+            <div class="row ">
     
-       
-        </tr>
-        @endfor
-        <tr >
-            <td style="text-align: center; border: 0px solid black; "></td>
+                <div class="col-12">
+                    <div class="input-group">
+                        <span class="input-group-text">Fecha</span>
+                        <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+    
+                       
+    
+    
+                      
+         <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" hidden>
+    
+                       
+    
+                        
            
-            <td style="text-align: center;">Subtotal: </td>
-            <td style="text-align: center;">${{ $subtotal }}</td>
-          
+    
+            <div class="row ">
+    
+                <div class="col-12">
+                            
+                    <div class="input-group">
+                    <span class="input-group-text">Cliente</span>
+                    <input type="text" class="form-control"  value="{{ $cotiactual[0]->cliente}}" readonly>
+    
+                    </div>
+                </div>
         
+            </div>
+            <div class="row">
+    
+                <div class="col-12">
+                <div class="input-group">
+                    <span class="input-group-text">NIT/DUI</span>
+                    <input type="text" class="form-control" id="dui" name="dui" value="{{ $cotiactual[0]->DUI}}" readonly>
+                </div>
+                </div>
+    
+    
+            </div>
+    
+    
+            <div class="row ">
+    
+                        <div class="col-12">
+                        <div class="input-group">
+                            <span class="input-group-text">Direccion</span>
+                            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
+                        </div>
+                        </div>
+    
+    
+            </div>
+    
+    <table id="prove" class="">
+        <thead >
+            <tr >
+                
+                <th scope="col">Detalle</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Total</th>
+              
+                
+            </tr>
+        </thead>
+        <tbody>{{ $subtotal=0 }}{{ $turismo=0 }}
+            
+            @for ($i=0; $i< count($detalles); $i++)
+            <tr >
+            <td>{{ $detalles[$i]->descripcion }}</td>
+           
+            <td>{{ $detalles[$i]->cantidad }}</td>
+            <td>${{ $detalles[$i]->preciouni }}</td>
+            <td>${{ $detalles[$i]->total }}</td>
+            
+            {{ $subtotal = $subtotal + $detalles[$i]->total }}
            
             </tr>
+            @endfor
+    
+            {{ $turismo= $subtotal * 0.05 }}
             <tr >
                 <td style="text-align: center; border: 0px solid black; "></td>
+                <td style="text-align: center; border: 0px solid black; "></td>
+                
                
-                <td style="text-align: center; font-size:13px;">13% IVA: </td>
-                <td style="text-align: center;">${{ round($subtotal * 0.13, 2) }}</td>
+                <td style="text-align: center;">Subtotal: </td>
+                <td style="text-align: center;">$ {{ round($subtotal,2 )}}</td>
               
             
                
                 </tr>
                 <tr >
                     <td style="text-align: center; border: 0px solid black; "></td>
+                    <td style="text-align: center; border: 0px solid black; "></td>
                    
-                    <td style="text-align: center; ">Total: </td>
-                    <td style="text-align: center;">${{ round($subtotal +( $subtotal * 0.13), 2) }}</td>
+                    <td style="text-align: center; font-size:13px;">Impuesto Turismo: </td>
+                    <td style="text-align: center;">$ {{ round($turismo,2)}}</td>
                   
                 
                    
-                    </tr>        
-
-    </tbody>
-
-    </table>
+                    </tr>
+                    <tr >
+                        <td style="text-align: center; border: 0px solid black; "></td>
+                        <td style="text-align: center; border: 0px solid black; "></td>
+                       
+                        <td style="text-align: center; ">Total: </td>
+                        <td style="text-align: center;">$ {{ round( $subtotal + $turismo, 2)}}</td>
+                      
                     
-
+                       
+                        </tr>    
+        </tbody>
+    
+        </table>
+                        
+    <hr>
+  
+    
+                   
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-
+       
+    </section>
+    
+    <script>
+        /*
+        window.print();
+        setTimeout(saludos, 3000);
+        
+        function saludos(){
+            window.location.href = '/facturacion';
+        }
+        */
+        </script>
 
 
 </body>

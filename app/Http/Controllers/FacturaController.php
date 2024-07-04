@@ -8,6 +8,7 @@ use App\Models\Cliente;
 use App\Models\Producto;
 use App\Models\Cotidetalle;
 use Carbon\Carbon;
+use Dompdf\Dompdf;
 
 class FacturaController extends Controller
 {
@@ -56,9 +57,34 @@ class FacturaController extends Controller
         $detalles = Cotidetalle::where('coticode', $id)->get();
         $cotiactual = Factura::where('codigo', $id)->get();
 
-        $pdf = PDF::loadView('facturacion.facturacoti', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
-        return $pdf->stream(); 
+        return view('facturacion.facturacoti', compact('cotiactual', 'detalles'));
+/*
+        $pdf = Dompdf::loadHtml('facturacion.facturacoti', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
+        $pdf->render();
 
+        return $pdf->stream(); 
+        */
+
+            /*
+        $html = view('facturacion.facturacoti',['detalles'=>$detalles, 'cotiactual'=>$cotiactual] )->render();
+
+        // Instantiate Dompdf
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // Set paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render PDF (important step!)
+        $dompdf->render();
+        //$dompdf->output();
+
+        // Output PDF to browser
+       
+       return $dompdf->stream('facturacion.facturacoti');
+*/
+       
+   
         //return view('cotizacion.ver', compact('cotiactual', 'detalles'));
     }
 
@@ -71,11 +97,11 @@ class FacturaController extends Controller
             $date = $date->format('Y');
             $codigo = "$date".$idcompr;
         
-
+            $newDate = date("Y/m/d", strtotime($request->get('fecha')));
         $cotienca = new Factura();
         $cotienca->cliente = $request->get('cliente');
         $cotienca->codigo = $codigo;
-        $cotienca->fecha = $request->get('fecha');
+        $cotienca->fecha = $newDate;
         
         $cotienca->DUI = $request->get('dui');
         $cotienca->direccion = $request->get('direccion');
@@ -103,8 +129,7 @@ class FacturaController extends Controller
         return view('facturacion.agregardetalle', compact('productos', 'detalles', 'cotiactual'));
     }
 
-
-
+  
     
 
     /**
@@ -124,8 +149,7 @@ class FacturaController extends Controller
         $detalle->cantidad = $request->get('cantidad');
         $detalle->preciouni = $request->get('precio');
         $detalle->total = $request->get('total');
-        $detalle->recargado = $request->get('recarga');
-        $detalle->preciorecargo = $request->get('unirecarga');
+       
         $detalle->save();
         
         

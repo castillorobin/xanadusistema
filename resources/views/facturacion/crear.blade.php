@@ -63,7 +63,7 @@
                         
                         <div class="input-group">
                             <span class="input-group-text">Fecha</span>
-                            <input type="date" class="form-control" id="fecha" name="fecha" >
+                            <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d/m/Y") }}" name="fecha"/>
  
                         </div>
                     </div>

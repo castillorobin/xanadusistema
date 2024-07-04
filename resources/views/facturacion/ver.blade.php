@@ -3,7 +3,7 @@
 @section('title', 'Cotización')
 
 @section('content_header')
-    <h1>Agregar Cotización</h1>
+    <h1>Detalle de Factura</h1>
   
 
 @stop
@@ -21,7 +21,7 @@
 
             <div class="card card-default">
                 <div class="card-header">
-                    <span class="card-title">Ingresar Datos</span>
+                    <span class="card-title">Factura</span>
                     
                 </div>
                 <div class="card-body bg-white">
@@ -33,148 +33,89 @@
                                 @method('GET')
 <div class="container">
 
-        <div class="row my-2">
+         
+    <div class="row my-3">
 
-                    <div class="col-6">
-                        
-                        <div class="input-group">
-                        <span class="input-group-text">Atencion</span>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $cotiactual[0]->nombre}}" readonly>
- 
-                        </div>
-                    </div>
+        <div class="col-6 text-center">
+         <h5>Santos Alberto Guerrero Beltran</h5>
+            <h4>MOTEL SANTORINI</h4>
+            <H5>17 Av. Sur y Calle Santa Cruz #7</H5>
+            <H5>Callejon Ferrocaril, Santa Ana</H5>
 
 
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text" >Cotización</span>
-                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" readonly>
-
-                    </div>
-                    </div>
-
-                    <div class="col-3">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
-                    </div>
-                    </div>
         </div>
 
+
+        <div class="col-6 text-center">
+            <h3 >FACTURA</h3>
+            <h5 >N.R.C Nº 183428-4</h5>
+            <h5>DUI 00520755-0</h5>
+            <h5 >NIT 0509-021159-101-0</h5>
+        </div>  
+
+
+</div>
+
         <div class="row my-2">
 
-                    <div class=" col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Empresa</span>
-                        <input type="text" class="form-control" id="empresa" name="empresa" value="{{ $cotiactual[0]->empresa}}" readonly>
-                    </div>
-                    </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text">Fecha</span>
+                    <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
+                </div>
+                </div>
+            </div>
+
+
+
+
+                   
+
+
+                  
+                        <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" hidden>
+
+                   
+
+                    
+       
+
+        <div class="row my-2">
+
+            <div class="col-6">
+                        
+                <div class="input-group">
+                <span class="input-group-text">Cliente</span>
+                <input type="text" class="form-control" id="cliente" name="cliente" value="{{ $cotiactual[0]->cliente}}" readonly>
+
+                </div>
+            </div>
     
         </div>
+        <div class="row my-2">
+
+            <div class="col-6">
+            <div class="input-group">
+                <span class="input-group-text">NIT/DUI</span>
+                <input type="text" class="form-control" id="dui" name="dui" value="{{ $cotiactual[0]->DUI}}" readonly>
+            </div>
+            </div>
+
+
+        </div>
+
 
         <div class="row my-2">
 
                     <div class="col-6">
                     <div class="input-group">
-                        <span class="input-group-text">Ubicación</span>
+                        <span class="input-group-text">Direccion</span>
                         <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
                     </div>
                     </div>
 
 
-                    <div class="col-6">
-                        <div class="input-group">
-                        <span class="input-group-text">Contacto 1</span>
-                        <input type="text" class="form-control" id="contacto1" name="contacto1" value="{{ $cotiactual[0]->contacto1}}" readonly>
-                    </div>    
-                    </div>     
         </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Orden</span>
-                        <input type="text" class="form-control" id="orden" name="orden" value="{{ $cotiactual[0]->orden}}" readonly >
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Contacto 2</span>
-                        <input type="text" class="form-control" id="contacto2" name="contacto2" value="{{ $cotiactual[0]->contacto2}}" readonly>
-                    </div>     
-                    </div>  
-        </div>
-
-        <div class="row my-2" >
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Garantia del trabajo</span>
-                        <input type="text" class="form-control" id="garantia" name="garantia" value="{{ $cotiactual[0]->garantia}}" readonly>
-                    </div>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Registro</span>
-                        <input type="text" class="form-control" id="registro" name="registro" value="{{ $cotiactual[0]->NCR}}" readonly>
-                    </div>  
-                    </div>   
-                      
-        </div>
-
-        <div class="row my-2">
-
-                    <div class="col-6">
-                        
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Email</span>
-                        <input type="text" class="form-control" id="correo" name="correo" value="{{ $cotiactual[0]->correo}}" readonly>
-                    </div> 
-                    </div>  
-
-
-        </div>
-
-        <div class="row my-3">
-
-                    <div class="col-6 text-center">
-                     <h3>Tenemos el gusto de cotizarle:</h3>
-                    </div>
-
-
-                    <div class="col-6">
-                    <div class="input-group">
-                    <span class="input-group-text">Proveedor No.</span>
-                        <input type="text" class="form-control" id="correo" name="correo" >
-                    </div> 
-                    </div>  
-
-
-        </div>
-        
-<hr>
-       
-       
-
-
-
-
-
-           
-           
-          
-          
-            
-</div>
 
 <table id="prove" class="table table-bordered shadow-lg mt-4 cell-border">
     <thead >
@@ -184,12 +125,11 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
             <th scope="col">Total</th>
-            <th scope="col">Recargado</th>
-            <th scope="col">Precio Uni Recargado</th>
+          
             
         </tr>
     </thead>
-    <tbody>
+    <tbody>{{ $subtotal=0 }}{{ $turismo=0 }}
         
         @for ($i=0; $i< count($detalles); $i++)
         <tr >
@@ -198,12 +138,44 @@
         <td>{{ $detalles[$i]->cantidad }}</td>
         <td>${{ $detalles[$i]->preciouni }}</td>
         <td>${{ $detalles[$i]->total }}</td>
-        <td>${{ $detalles[$i]->recargado }}</td>
-        <td>${{ $detalles[$i]->preciorecargo }}</td>
-    
+        
+        {{ $subtotal = $subtotal + $detalles[$i]->total }}
        
         </tr>
         @endfor
+
+        {{ $turismo= $subtotal * 0.05 }}
+        <tr >
+            <td style="text-align: center; border: 0px solid black; "></td>
+            <td style="text-align: center; border: 0px solid black; "></td>
+            
+           
+            <td style="text-align: center;">Subtotal: </td>
+            <td style="text-align: center;">$ {{ round($subtotal,2 )}}</td>
+          
+        
+           
+            </tr>
+            <tr >
+                <td style="text-align: center; border: 0px solid black; "></td>
+                <td style="text-align: center; border: 0px solid black; "></td>
+               
+                <td style="text-align: center; font-size:13px;">Impuesto Turismo: </td>
+                <td style="text-align: center;">$ {{ round($turismo,2)}}</td>
+              
+            
+               
+                </tr>
+                <tr >
+                    <td style="text-align: center; border: 0px solid black; "></td>
+                    <td style="text-align: center; border: 0px solid black; "></td>
+                   
+                    <td style="text-align: center; ">Total: </td>
+                    <td style="text-align: center;">$ {{ round( $subtotal + $turismo, 2)}}</td>
+                  
+                
+                   
+                    </tr>    
     </tbody>
 
     </table>
@@ -212,7 +184,7 @@
 <a href="/cotizacion">
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
-<a href="/cotizacion/verpdf/{{ $cotiactual[0]->codigo }}">
+<a href="/facturacion/verpdf/{{ $cotiactual[0]->codigo }}">
                     <button type="button" class="btn btn-primary">Generar PDF</button></a>
 
                 </form>
