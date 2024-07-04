@@ -185,7 +185,7 @@
                     <button type="button" class="btn btn-danger">Cancelar</button> </a>
 &nbsp; &nbsp; &nbsp;
 <a href="/facturacion/verpdf/{{ $cotiactual[0]->codigo }}">
-                    <button type="button" class="btn btn-primary">Generar PDF</button></a>
+                    <button type="button" class="btn btn-primary">Imprimir</button></a>
 
                 </form>
                 </div>
