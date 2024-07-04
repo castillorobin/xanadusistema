@@ -175,14 +175,14 @@
     </section>
     
     <script>
-        /*
+        
         window.print();
         setTimeout(saludos, 3000);
         
         function saludos(){
             window.location.href = '/facturacion';
         }
-        */
+        
         </script>
 
 
