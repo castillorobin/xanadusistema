@@ -14,7 +14,7 @@
     
 
    
-        <div class="row">
+        <div class="row p-4">
 
             <div class="col-md-12 text-center">
                 <h3>Factura</h3>
@@ -37,51 +37,59 @@
     
     
             </div>
-     
-   
-    
-            <div class="row ">
-    
-                <div class="col-12">
-                    <div class="input-group">
-                        <span class="input-group-text">Fecha</span>
-                        <input type="text" class="form-control" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
-                    </div>
-                </div>
-            </div>
-    
-    
-    
-    
-                       
-    
-    
+     <p></p>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <span class="input-group-text border-0">Fecha: </span>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control border-0" id="fecha" name="fecha" value="{{ $cotiactual[0]->fecha}}" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="input-group-text border-0">Cliente: </span>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control border-0"  value="{{ $cotiactual[0]->cliente}}" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="input-group-text border-0">NIT/DUI: </span>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control border-0" id="dui" name="dui" value="{{ $cotiactual[0]->DUI}}" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="input-group-text border-0">Direccion: </span>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control border-0" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
+                    </td>
+                </tr>
+
+            </tbody>
+
+            </table>
+
                       
-         <input type="text" class="form-control" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" hidden>
+         <input type="text" class="form-control border-0" id="codigo" name="codigo" value="{{ $cotiactual[0]->codigo}}" hidden>
     
-                       
-    
-                        
-           
-    
-            <div class="row ">
-    
-                <div class="col-12">
-                            
-                    <div class="input-group">
-                    <span class="input-group-text">Cliente</span>
-                    <input type="text" class="form-control"  value="{{ $cotiactual[0]->cliente}}" readonly>
-    
-                    </div>
-                </div>
-        
-            </div>
+                     
             <div class="row">
     
                 <div class="col-12">
                 <div class="input-group">
-                    <span class="input-group-text">NIT/DUI</span>
-                    <input type="text" class="form-control" id="dui" name="dui" value="{{ $cotiactual[0]->DUI}}" readonly>
+                    
+                    
                 </div>
                 </div>
     
@@ -89,31 +97,25 @@
             </div>
     
     
-            <div class="row ">
-    
-                        <div class="col-12">
-                        <div class="input-group">
-                            <span class="input-group-text">Direccion</span>
-                            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $cotiactual[0]->direccion}}" readonly>
-                        </div>
-                        </div>
-    
-    
-            </div>
-    
-    <table id="prove" class="">
+          
+            <br>
+    <hr>
+    <table id="prove" class="text-center">
         <thead >
             <tr >
                 
                 <th scope="col">Detalle</th>
-                <th scope="col">Cantidad</th>
+                <th scope="col">Cant.</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Total</th>
+                <th scope="col">Subtotal</th>
               
                 
             </tr>
         </thead>
-        <tbody>{{ $subtotal=0 }}{{ $turismo=0 }}
+        <tbody>
+            <input type="text" value="{{ $subtotal=0 }}" hidden>
+            <input type="text" value="{{ $turismo=0 }}" hidden>
+            
             
             @for ($i=0; $i< count($detalles); $i++)
             <tr >
@@ -122,13 +124,14 @@
             <td>{{ $detalles[$i]->cantidad }}</td>
             <td>${{ $detalles[$i]->preciouni }}</td>
             <td>${{ $detalles[$i]->total }}</td>
+            <input type="text" value="{{ $subtotal = $subtotal + $detalles[$i]->total }}" hidden>
             
-            {{ $subtotal = $subtotal + $detalles[$i]->total }}
            
             </tr>
             @endfor
-    
-            {{ $turismo= $subtotal * 0.05 }}
+            <input type="text" value=" {{ $turismo= $subtotal * 0.05 }}" hidden>
+            
+           
             <tr >
                 <td style="text-align: center; border: 0px solid black; "></td>
                 <td style="text-align: center; border: 0px solid black; "></td>
@@ -165,9 +168,9 @@
         </table>
                         
     <hr>
-  
-    
-                   
+  <div class="text-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png" alt="" style="width: 200px;">
+</div>            
                     </div>
                 </div>
             </div>
@@ -175,14 +178,14 @@
     </section>
     
     <script>
-        
+        /*
         window.print();
         setTimeout(saludos, 3000);
         
         function saludos(){
             window.location.href = '/facturacion';
         }
-        
+        */
         </script>
 
 
